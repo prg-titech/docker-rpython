@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 MAINTAINER Yusuke Izawa <yuizalp@gmail.com>
 
@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
     build-essential \
     && apt-get clean
 
-RUN cd tmp \
+RUN cd /tmp \
     && wget -q -O - https://bitbucket.org/pypy/pypy/downloads/pypy2-v5.7.1-linux64.tar.bz2 | tar jx \
     && ln -s /tmp/pypy2-v5.7.1-linux64/bin/pypy /usr/local/bin/pypy
 
